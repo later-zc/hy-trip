@@ -1,6 +1,5 @@
 # hy-trip
 a trip project, Front-end technology stack: Vue3+Pinia+Vite+Vue-Router+Vant3
-author
 
 This template should help get you started developing with Vue 3 in Vite.
 
