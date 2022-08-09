@@ -1,14 +1,16 @@
 <template>
   <div class="app">
     <router-view></router-view>
-    <router-link to="/home">首页</router-link>
-    <router-link to="/favorite">收藏</router-link>
-    <router-link to="/order">订单</router-link>
-    <router-link to="/profile">消息</router-link>
+    <!-- <TabBar v-if="!route.meta.hideTabBar"></TabBar> -->
+    <TabBar></TabBar>
   </div>
 </template>
 
 <script setup>
+  import TabBar from '@/components/TabBar/TabBar.vue'
+  import { useRoute } from 'vue-router';
+
+  const route = useRoute()
 
 </script>
 

@@ -1,4 +1,42 @@
+:root {
+  --theme-color: #ff9854;
+  /* 全局修改: 修改search样式 */
+  --van-search-left-icon-color: var(--theme-color) !important;
+}
+
 body {
   font-size: 14px;
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'NotoSerifKR-Regular'; */
+  font-family: 'ZCOOLKuaiLe-Regular';
+}
+
+/* 当前元素占整个屏幕，盖在tabbar上面显示 */
+.top-page {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  /* overflow-y: scroll; */
+  overflow: scroll;
+  /* 默认transparent透明，需要设置一层背景色覆盖 */
+  background-color: #fff;
+}
+
+@font-face {
+  font-family: 'NotoSerifKR-Regular';
+  src: url(../fonts/NotoSerifKR-Regular.otf);
+}
+
+@font-face {
+  font-family: 'NotoSansSC-Regular';
+  src: url(../fonts/NotoSansSC-Regular.otf);
+}
+
+@font-face {
+  font-family: 'ZCOOLKuaiLe-Regular';
+  src: url(../fonts/ZCOOLKuaiLe-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'ZhiMangXing-Regular';
+  src: url(../fonts/ZhiMangXing-Regular.ttf);
 }
