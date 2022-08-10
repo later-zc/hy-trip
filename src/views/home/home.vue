@@ -10,8 +10,8 @@
 
 <script setup>
   import { ref } from 'vue';
-  import HomeNavBar from './components/HomeNavBar.vue'
-  import HomeSearch from './components/HomeSearch.vue'
+  import HomeNavBar from './components/HomeNavBar.vue';
+  import HomeSearch from './components/HomeSearch.vue';
   
 
 

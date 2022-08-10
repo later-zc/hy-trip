@@ -8,12 +8,14 @@ body {
   font-size: 14px;
   /* font-family: 'NotoSerifKR-Regular'; */
   font-family: 'ZCOOLKuaiLe-Regular';
+  /* font-family: 'ZhiMangXing-Regular'; */
+  /* font-family: 'NotoSansSC-Regular'; */
 }
 
 /* 当前元素占整个屏幕，盖在tabbar上面显示 */
 .top-page {
   position: relative;
-  z-index: 2;
+  z-index: 9;
   height: 100vh;
   /* overflow-y: scroll; */
   overflow: scroll;

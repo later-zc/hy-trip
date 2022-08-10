@@ -1,6 +1,6 @@
 {
   "name": "hy-trip",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "later_zc",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "dayjs": "^1.11.4",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.17",
     "vant": "^3.5.4",
