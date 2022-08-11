@@ -1,5 +1,5 @@
-import { getCityAll } from "@/service";
 import { defineStore } from "pinia";
+import { getCityAll } from "@/service";
 
 const cityStoreOptions = {
   state: () => ({
@@ -8,9 +8,6 @@ const cityStoreOptions = {
       cityName: '深圳'
     }
   }),
-  getters: {
-
-  },
   actions: {
     async fetchAllCityData() {
       const res = await getCityAll()

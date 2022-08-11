@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { BASE_URL, TIMEOUT } from './config.js'
+import axios from "axios";
+import { BASE_URL, TIMEOUT } from "./config.js";
 
 class HYRequest {
   constructor(baseURL, timeout=10000) {

@@ -13,6 +13,7 @@
         </template>
       </van-tabs>
     </div>
+
     <div class="content-area">
       <template v-for="(value, key, index) in allCity" :key="index">
         <CityGroup v-show="index == tabActive" :cityGroup="value"></CityGroup>
@@ -22,12 +23,12 @@
 </template>
 
 <script setup>
-  import { ref, computed } from 'vue';
-  import { useRouter } from 'vue-router';
-  import useCityStore from '@/stores/modules/city';
-  import { storeToRefs } from 'pinia';
+  import { ref, computed } from "vue";
+  import { useRouter } from "vue-router";
+  import useCityStore from "@/stores/modules/city";
+  import { storeToRefs } from "pinia";
 
-  import CityGroup from './components/CityGroup.vue';
+  import CityGroup from "./components/CityGroup.vue";
   
   // 搜索框
   const searchValue = ref('')

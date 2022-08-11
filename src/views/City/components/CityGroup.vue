@@ -1,7 +1,7 @@
 <template>
   <div class="city-group">
     <van-index-bar :sticky="false" :index-list="indexList">
-      <van-index-anchor index="热门" />
+      <van-index-anchor index="热门城市" />
       <div class="hotCity-container">
         <template v-for="(city, index) in cityGroup.hotCities">
           <div class="hotCity-item" @click="hotCityClick(city)">{{ city.cityName }}</div>
@@ -19,9 +19,9 @@
 </template>
 
 <script setup>
-  import useCityStore from '@/stores/modules/city';
-  import { computed } from '@vue/reactivity';
-  import { useRouter } from 'vue-router';
+  import useCityStore from "@/stores/modules/city";
+  import { computed } from "@vue/reactivity";
+  import { useRouter } from "vue-router";
 
   const props = defineProps({
     cityGroup: {
@@ -32,7 +32,7 @@
 
   const indexList = computed(() => {
     const listArr = props.cityGroup.cities.map(item => item.group)
-    listArr.unshift('#')
+    listArr.unshift('热门')
     return listArr
   })
 

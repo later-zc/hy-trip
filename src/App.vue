@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-  import TabBar from '@/components/TabBar/TabBar.vue'
-  import { useRoute } from 'vue-router';
+  import TabBar from "@/components/TabBar/TabBar.vue";
+  import { useRoute } from "vue-router";
 
   const route = useRoute()
 

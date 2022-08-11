@@ -14,9 +14,9 @@
 </template>
  
 <script setup>
-  import tabbarData from '@/assets/data/tabbar.js'
-  import { getAssetsUrl } from '@/utils/loadAssets.js'
-  import { ref } from 'vue'
+  import tabbarData from "@/assets/data/tabbar.js";
+  import { getAssetsUrl } from "@/utils/loadAssets.js";
+  import { ref } from "vue";
 
   const curIndex = ref(0)
 

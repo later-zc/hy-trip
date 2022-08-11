@@ -32,10 +32,10 @@
 </template>
  
 <script setup>
-  import tabbarData from '@/assets/data/tabbar.js'
-  import { getAssetsUrl } from '@/utils/loadAssets.js'
-  import { ref } from 'vue'
-  // import { useRouter } from 'vue-router'
+  import tabbarData from "@/assets/data/tabbar.js";
+  import { getAssetsUrl } from "@/utils/loadAssets.js";
+  import { ref } from "vue";
+  // import { useRouter } from "vue-router";
 
   const curIndex = ref(0)
   // const router = useRouter()

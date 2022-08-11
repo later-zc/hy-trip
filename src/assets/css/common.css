@@ -2,6 +2,7 @@
   --theme-color: #ff9854;
   /* 全局修改: 修改search样式 */
   --van-search-left-icon-color: var(--theme-color) !important;
+  --theme-linear-gradient: linear-gradient(90deg, #fa8c1d, #fcaf3f);
 }
 
 body {
@@ -21,6 +22,15 @@ body {
   overflow: scroll;
   /* 默认transparent透明，需要设置一层背景色覆盖 */
   background-color: #fff;
+}
+
+/* 文字两行溢出隐藏 */
+.text-two-lines-overflow-hide {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 @font-face {

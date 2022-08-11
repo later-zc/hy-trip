@@ -31,21 +31,52 @@
       color="#ff9854"
       :formatter="formatter"
       @confirm="onConfirm" />
+
+    <div class="desc-area">
+      <span>价格不限</span>
+      <span>人数不限</span>
+    </div>
+    
+    <div class="keyword-area">
+      <span>关键字/位置/民宿名</span>
+    </div>
+
+    <div class="hotSuggest-area">
+      <template v-for="(item, index) in hotSuggests" :key="index">
+        <div 
+        class="content" 
+        :style="{ color: item.tagText.color, background: item.tagText.background.color }">
+          {{ item.tagText.text }}
+        </div>
+      </template>
+    </div>
+
+    <div class="searchBtn-area" @click="onSearch">
+      <span>开始搜索</span>
+    </div>
+
+    <div class="categories-area">
+
+    </div>
+
   </div>
 </template>
 
 <script setup>
   import { ref } from 'vue';
   import useCityStore from '@/stores/modules/city';
+  import useHomeStore from '@/stores/modules/home';
   import { useRouter } from 'vue-router';
+  import { storeToRefs } from 'pinia';
   import { formatMonthDay, getDifferenceDay } from '@/utils/formatDate.js';
   
   const router = useRouter()
+
   const cityClick = () => {
     router.push('/city')
   }
   
-  // 获取位置信息
+  // 获取当前位置信息
   const posClick = () => {
     navigator.geolocation.getCurrentPosition(res => {
       console.log('获取位置信息成功: ', res)
@@ -83,7 +114,22 @@
     }
     return day
   }
-  
+
+  // 处理热门建议
+  const homeStore = useHomeStore()
+  const { hotSuggests } = storeToRefs(homeStore)
+
+  // 处理搜索按钮
+  const onSearch = () => {
+    router.push({
+      path: '/search',
+      query: {
+        startDate: startDate.value,
+        endDate: endDate.value,
+        curCity: curCity.cityName
+      }
+    })
+  }
 
 </script>
 
@@ -92,12 +138,13 @@
     // --van-calendar-popup-height: 100%;
     .layout {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
       height: 44px;
       margin: 0 20px;
       border-bottom: 1px solid #eee;
     }
+    
     .location-area {
       .layout();
 
@@ -137,5 +184,34 @@
       }
     }
 
+    .desc-area,
+    .keyword-area {
+      .layout();
+      color: #aaa;
+    }
+
+    .hotSuggest-area {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px 20px;
+
+      .content {
+        margin: 6px;
+        padding: 3px 6px;
+        border-radius: 15px;
+        font-size: 12px;
+      }
+    }
+
+    .searchBtn-area  {
+      .layout();
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      border-bottom: none;
+      color: #fff;
+      font-size: 18px;
+      background-image: var(--theme-linear-gradient);
+    }
   }
 </style>

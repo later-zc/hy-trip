@@ -1,4 +1,4 @@
-import hyRequest from '../request/index'
+import hyRequest from "../request/index";
 
 export function getCityAll() {
   return hyRequest.get({

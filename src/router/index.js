@@ -9,6 +9,7 @@ const routes = [
   { path: '/city', component: () => import('@/views/City/City.vue'), 
   // meta: { hideTabBar: true } 
   },
+  { path: '/search', component: () => import('@/views/Search/Search.vue') },
 ]
 
 const router = createRouter({
