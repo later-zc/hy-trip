@@ -63,12 +63,13 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+  import { computed, ref } from 'vue';
   import useCityStore from '@/stores/modules/city';
   import useHomeStore from '@/stores/modules/home';
   import { useRouter } from 'vue-router';
   import { storeToRefs } from 'pinia';
   import { formatMonthDay, getDifferenceDay } from '@/utils/formatDate.js';
+  import useSearchStore from '@/stores/modules/search.js';
   
   const router = useRouter()
 
@@ -87,19 +88,20 @@
 
   // 获取当前城市
   const cityStore = useCityStore()
-  const { curCity } = cityStore
+  // const { curCity } = cityStore
+  const curCity = computed(() => cityStore.curCity)
 
   // 处理日期
-  const nowTimeStamp = +new Date()
-  const tomorrowTimeStamp = nowTimeStamp + 24*60*60*1000
-  const startDate = ref(formatMonthDay(nowTimeStamp))
-  const endDate = ref(formatMonthDay(tomorrowTimeStamp))
-  const stayTime = ref(getDifferenceDay(nowTimeStamp, tomorrowTimeStamp))
+  const searchStore = useSearchStore()
+  const { startTimeStamp, endTimeStamp } = storeToRefs(searchStore)
+  const startDate = computed(() => formatMonthDay(startTimeStamp.value))
+  const endDate = computed(() => formatMonthDay(endTimeStamp.value))
+  const stayTime = ref(getDifferenceDay(startTimeStamp.value, endTimeStamp.value))
   const onConfirm = (value) => {
     const sDate = value[0]
     const eDate = value[1]
-    startDate.value = formatMonthDay(sDate)
-    endDate.value = formatMonthDay(eDate)
+    searchStore.startTimeStamp = sDate
+    searchStore.endTimeStamp = eDate
     stayTime.value = getDifferenceDay(sDate, eDate)
     isShowCalendar.value = false
   }

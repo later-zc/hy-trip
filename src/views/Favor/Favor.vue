@@ -9,5 +9,7 @@
 </script>
 
 <style lang="less" scoped>
-
+  .favor {
+    font-size: 16px;
+  }
 </style>

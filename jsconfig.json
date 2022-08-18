@@ -5,6 +5,7 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "jsx": "preserve", // 增加对template中的智能提示
     "paths": {
       "@/*": [
         "src/*"
@@ -17,7 +18,8 @@
       "scripthost"
     ]
   },
-  "vueCompilerOptions": {
-    "experimentalDisableTemplateSupport": true
-  }
+  // "vueCompilerOptions": {
+  // experimentalDisableTemplateSupport: 禁用模板支持
+  //   "experimentalDisableTemplateSupport": true
+  // }
 }

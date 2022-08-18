@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   { path: '/', redirect: '/home' },
+  { path: '/:pathMatch(.*)', component: () => import('@/views/NotFound/NotFound.vue') },
   { path: '/home', component: () => import('@/views/Home/Home.vue') },
   { path: '/favor', component: () => import('@/views/Favor/Favor.vue') },
   { path: '/order', component: () => import('@/views/Order/Order.vue') },
@@ -10,6 +11,7 @@ const routes = [
   // meta: { hideTabBar: true } 
   },
   { path: '/search', component: () => import('@/views/Search/Search.vue') },
+  { path: '/detail/:id', component: () => import('@/views/Detail/Detail.vue') },
 ]
 
 const router = createRouter({

@@ -18,7 +18,7 @@ const homeStoreOptions = {
       this.categories = res.data
     },
     async fetchHouseList() {
-      const res = await getHouseList(this.curPagination)
+      const res = await getHouseList(this.curPagination++)
       this.houseList.push(...res.data)
     }
   }
